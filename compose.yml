@@ -1,6 +1,6 @@
 version: "3.8"
-services: 
-  api: 
+services:
+  api:
     build: ./api/
     container_name: api
     ports:
@@ -9,11 +9,12 @@ services:
     environment:
       MONGO_URI: mongodb://root:root@db:27017
       JWT_SECRET: ecommerce
-    volumes: 
+    volumes:
       - "./api/:/app"
       - "/app/node_modules"
-  
-  client: 
+    image: mejbri1998/api:latest  
+
+  client:
     build: ./client/
     container_name: client
     ports:
@@ -21,11 +22,12 @@ services:
     command: npm run dev
     environment:
       REACT_APP_API_URL: http://api:4000
-    volumes: 
+    volumes:
       - "./client/:/app"
       - "/app/node_modules"
+    image: mejbri1998/client:latest  
   
-  db: 
+  db:
     image: mongo:4.4
     restart: always
     environment:
@@ -33,6 +35,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: root
     volumes:
       - db-data:/data/db
+    image: mejbri1998/mongo:latest
 
-volumes: 
+volumes:
   db-data: {}
