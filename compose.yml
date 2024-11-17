@@ -35,7 +35,6 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: root
     volumes:
       - db-data:/data/db
-    image: mejbri1998/mongo:latest
 
 volumes:
   db-data: {}
