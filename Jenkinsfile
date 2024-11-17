@@ -32,7 +32,7 @@ pipeline {
         stage('Tag and Push Images to Docker Hub') {
             steps {
                 
-                    sh "echo root | sudo -Sdocker tag mejbri1998/api:latest mejbri1998/api:latest"
+                    sh "echo root | sudo -S docker tag mejbri1998/api:latest mejbri1998/api:latest"
                     sh "echo root | sudo -S docker tag mejbri1998/client:latest mejbri1998/client:latest"
                     
                     sh "echo root | sudo -S docker push mejbri1998/api:latest"
