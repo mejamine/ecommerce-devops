@@ -25,9 +25,9 @@ pipeline {
 
         stage("build docker images and run container"){
             steps {
-                scripts {
+                
                     sh  'echo root | sudo -S docker compose up --build'
-                }
+                
             }
         }
     }
