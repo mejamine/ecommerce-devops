@@ -1,5 +1,5 @@
 #node js version
-FROM node:18
+FROM node:latest
 
 # working directory
 WORKDIR /app
